@@ -36,10 +36,10 @@ type();
 
 document.addEventListener('DOMContentLoaded', () => {
         AOS.init({
-        duration: 800, 
+        duration: 400, 
         easing: 'ease-in-out', 
         once: true, 
-        offset: 100 
+        offset: 50
         });
     });
 
@@ -71,3 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+// Tailwind CSS dark mode toggle
+tailwind.config = {
+    darkMode: 'class'
+  }
+const checkbox = document.getElementById('themeCheckbox');
+const checkbox2 = document.getElementById('themeCheckbox2');
+const htmlEl = document.documentElement;
+
+checkbox.addEventListener('change', () => {
+  htmlEl.classList.toggle('dark', checkbox.checked);
+});
+
+checkbox2.addEventListener('change', () => {
+  htmlEl.classList.toggle('dark', checkbox2.checked);
+});
